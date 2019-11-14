@@ -6,3 +6,12 @@ indoorviewer {
 	height: 100vh;
 }
 
+#myPOIViewer {
+	position: absolute;
+	top: 460px;
+	left: 500px;
+	width: 350px;
+	z-index: 1000;
+	display: none;
+	background-color: #ee0;
+}
