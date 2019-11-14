@@ -22,12 +22,16 @@ let MyApp = (function() {
         console.log(poiViewer);
         //poiViewer.title.innerHTML = poi.titles[lang];
         //poiViewer.description.innerHTML = poi.descriptions[lang];
+        document.querySelector(".modalContainer").style.display = "flex";
+        document.querySelector(".modalContainer .backDrop").style.display = "flex";
         poiViewer.dom.style.display = "flex";  // Display HTML template
     }
 
     let closePoi = function() {
         let poiService = IV.api.poi.service;
-        poiService.closePOI();
+        poiService.closePoi();
+        document.querySelector(".modalContainer").style.display = "none";
+        document.querySelector(".modalContainer .backDrop").style.display = "none";
         poiViewer.dom.style.display = "none";
     }
 
