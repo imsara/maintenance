@@ -10,7 +10,7 @@ class TestApp
 
 	constructor()
 	{
-		getApi("http://demo.esitevr.com/iv.fortum.jarvenpaa/", {"ui.poi_panel.visible": false})
+		getApi("https://demo.esitevr.com/iv.fortum.jarvenpaa/", {"ui.poi_panel.visible": false})
 			.then((iv: ApiInterface) => {
 				this.ivApi = iv;
 				MyApp.initOverrides();
