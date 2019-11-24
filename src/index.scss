@@ -26,40 +26,45 @@ html, body {
     font-weight: 300;
 }
 
-.modalContainer {
+.routerContainer {
     z-index: 999;
+
+    position: fixed;
 
     top: 0;
     left: 0;
 
     width: 100%;
     height: 100%;
-        .backDrop {
-        z-index: 9999;
 
-        display: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
 
-        top: 0;
-        left: 0;
+    .backDrop {
+    z-index: 9999;
 
-        width: 100%;
-        height: 100%;
+    display: none;
 
-        position: fixed;
+    top: 0;
+    left: 0;
 
-        background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.4);
     }
 
     .modal {
-        z-index: 99999;
-
-        display: none;
+        display: flex;
         flex-direction: column;
 
-        margin: auto;
+        position: relative;
 
-        height: 640px;
-        width: 360px;
+        height: 100%;
+        width: 100%;
 
         overflow: hidden;
         background-color: white;
@@ -147,7 +152,7 @@ html, body {
             }
         }
 
-        .btn {
+        .btnC {
             display: flex;
 
             justify-content: center;
@@ -201,4 +206,138 @@ html, body {
         }
     }
 
+}
+
+
+
+
+header {
+    text-align: center;
+    border-bottom:.1em solid rgba(34, 186, 211, 0.5);
+}
+
+.align-left {
+    float: left !important;
+}
+
+#eq-name {
+    font-size: 2em;
+    line-height: 0.8em;
+    display: inline-block;
+}
+
+.v {
+    display: inline-block;
+}
+
+.btn.btn-success {
+    color: #707070 !important;
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+    border-color: #ffffff #ffffff #ffffff;
+}
+
+.btn.btn-success:hover {
+    color: #707070;
+    background-color: #ffffff;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+    border-color: #ffffff #ffffff #ffffff;
+}
+
+.kks{
+    font-size:initial;
+    text-align:inherit;
+}
+
+
+.routerItem {
+    display: none;
+
+
+    height: 640px;
+    width: 360px;
+
+    z-index: 99999;
+}
+
+
+/*MAIN LAYOUT GRID*/
+.pumpContainer {
+    display: grid;
+    grid-template-columns: 35% auto;
+    grid-template-rows: 4em 0.5em 25% auto 40%;
+    grid-template-areas:    "header header"
+    ". ."
+    "meter recipe"
+    "meter ."
+    "meter btns";
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+    padding: 0.4em;
+    height: 100%;
+    width: 100%; /*stretch to the full width and height of the device.*/
+    top: 2rem;
+    left: 2rem;
+    border-radius: 3px;
+    box-shadow: 0 0 21px -10px rgba(0,0,0,0.75);
+    background-color: white;
+}
+
+.head {
+    grid-area: header;
+    padding: 0.3em;
+}
+
+.meter {
+    grid-area: meter;
+    padding: 0.3em;
+    border: 0.1em solid #707070;
+}
+
+.recipe {
+    grid-area: recipe;
+    padding: 0.3em;
+    border: 0.1em solid rgba(34, 186, 211, 0.5);
+}
+
+#suhde{
+    text-align:center;
+}
+
+
+
+/*BUTTON NESTED GRID & BUTTON AREA (MAIN LAYOUT GRID)*/
+.btns {
+    grid-area: btns;
+    padding: 0.3em;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:    "kaavio"
+    "taytto"
+    "historia";
+    display: grid;
+}
+
+.kaavio {
+    grid-area: kaavio;
+    text-align: center;
+}
+
+.taytto {
+    grid-area: taytto;
+    text-align: center;
+}
+
+.historia {
+    grid-area: historia;
+    text-align: center;
+}
+
+/*BUTTON*/
+.btn-primary {
+    background-color: #22BAD3;
+    border-color: #22BAD3;
+    width: 10em;
+    height: 4em;
+    margin: 0.2em
 }
