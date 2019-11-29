@@ -30,14 +30,25 @@ module.exports = {
 	},
 	plugins: [new HtmlWebpackPlugin({
 		template: "src/index.html",
-		favicon: 'src/image/favicon.ico'})],
+		favicon: 'src/image/favicon.ico'
+	})],
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	devtool: 'inline-source-map',
 	devServer: {
-		contentBase: './dist'
-	},
-	mode: 'development'
+		contentBase: './dist',
+		proxy: {
+			'/api': {
+				target: 'http://<ip>:8888',
+				secure: false,
+			},
+		},
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Headers': '*',
+			'Access-Control-Allow-Methods': '*',
+		},
+	}
 };

@@ -1,6 +1,7 @@
 import "./index.scss";
 import {getApi, ApiInterface} from "@navvis/indoorviewer";
-import {SidebarMenuModifier} from "./SidebarMenuModifier";
+import {MyApp} from "./MyApp.js";
+//import {SidebarMenuModifier} from "./SidebarMenuModifier";
 
 class TestApp
 {
@@ -9,11 +10,12 @@ class TestApp
 
 	constructor()
 	{
-		getApi("http://demo.esitevr.com/iv.fortum.jarvenpaa/")
+		getApi("https://demo.esitevr.com/iv.fortum.jarvenpaa/", {"ui.poi_panel.visible": false})
 			.then((iv: ApiInterface) => {
 				this.ivApi = iv;
-                const modifier = new SidebarMenuModifier(iv);
-                console.log(modifier);
+				MyApp.initOverrides();
+                /*const modifier = new SidebarMenuModifier(iv);
+                console.log(modifier);*/
 			});
 	}
 }
