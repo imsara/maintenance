@@ -10,7 +10,7 @@
 
 <body>
     <indoorviewer></indoorviewer>
-    
+
     <div class="routerContainer">
         <!-- PUMP OPTIONS -->
         <div class="routerItem routerPump">
@@ -37,7 +37,8 @@
                 </div>
                 <div class="btns">
                     <div class="kaavio">
-                        <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">PI-kaavio</span>
+                        <button id="btnKaavio" type="button" class="btn btn-primary "><span
+                                style="font-size:1.3em;">PI-kaavio</span>
                         </button>
                     </div>
                     <div class="taytto">
@@ -98,10 +99,28 @@
                 </div>
             </div>
         </div>
+
+        <!-- PI-Kaavio -->
+
+        <div class="routerItem routerKaavio">
+            <div class="modal">
+                <div class="modalContent">
+                    <iframe id="imgPi"
+                        src="https://lh3.googleusercontent.com/qkdtF-2b_gucDhRgT5-1KWIhzeHUcrConrFOeoy6pefc6zCW6Bxn0ijwKfbZ7rdUnKcMDCVa1m13jyNgBsGnoLvIDFa8Yx3xrlewIha0TChfjHnQ1WTdGUihXIXsU5kbD0TNxx9e=w2400"
+                        style='position:absolute; top:0px; left:0px; height:100%;width:100%;'></iframe>
+                </div>
+                <div class="modalFooter">
+                    <div id="btnClose" class="btnC btnBlack">
+                        <h1 class="btnTitle">SULJE</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="backDrop"></div>
     </div>
 
-    
+
 </body>
 
 </html>
