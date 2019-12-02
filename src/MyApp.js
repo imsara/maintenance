@@ -1,7 +1,7 @@
 let MyApp = (function() {
 
     let poiViewer = null;
-    let routerItems = document.querySelectorAll(".routerContainer .routerItem");
+    let routerItems = document.querySelectorAll(".routerItem");
     console.log(routerItems);
 
     /* elements for säiliöntäyttö */
@@ -9,11 +9,15 @@ let MyApp = (function() {
     let title = document.querySelector("routerSailio .modalTitle");
     let description = document.querySelector("routerSailio .modalSubTitle");
     let sailioSucceedButton = document.querySelector("#btnSucceed");
+    let video = document.querySelector("#video");
     sailioSucceedButton.addEventListener("click" , () => {
         router(0);
     });
     sailioCloseButton.addEventListener("click", () => {
         router(0);
+    });
+    video.addEventListener("click", () => {
+        link();
     });
 
 
@@ -69,6 +73,11 @@ let MyApp = (function() {
                 routerItem.style.display = "flex";
             }
         }
+    }
+
+    /* Opens a link to the 360 video*/
+    const link = function(){
+        window.open("https://esite.viar360.com/virtual/story/play/F9A6498E-181D-0B14-A285-E74CF38E954A?getiframedimensions=true&ui=false&video_cmd=false", "_blank");
     }
 
     return {
