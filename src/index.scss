@@ -1,5 +1,5 @@
 indoorviewer {
-	height: 100vh;
+  height: 100vh;
 }
 
 /*#myPOIViewer {
@@ -13,35 +13,34 @@ indoorviewer {
 }*/
 
 html, body {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    /* background-color: #25b7d3; */
+  /* background-color: #25b7d3; */
 
-
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
 }
 
 .routerContainer {
-    z-index: 999;
+  z-index: 999;
 
-    position: fixed;
+  position: fixed;
 
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: none;
-    align-items: center;
-    justify-content: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
 
-    .backDrop {
+  .backDrop {
     z-index: 9999;
 
     display: none;
@@ -55,289 +54,414 @@ html, body {
     position: fixed;
 
     background-color: rgba(0, 0, 0, 0.4);
-    }
+  }
 
-    .modal {
+  .modalPumpContent {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+
+    .modalPumpMeter {
+      display: flex;
+      align-items: center;
+
+      width: 45%;
+      height: 100%;
+
+      .pumpMeterContainer {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        width: 7rem;
+        height: calc(100% - 6rem);
 
-        position: relative;
+        margin: 0 0 0 3rem;
+        padding: 0.75rem;
 
-        height: 100%;
-        width: 100%;
-
-        overflow: hidden;
-        background-color: white;
+        background-color: #e8e8e8;
 
         border-radius: 3px;
-        box-shadow: 0 0 21px -10px rgba(0,0,0,0.75);
 
-        .modalHeader {
-            flex: 0 1;
+        .pumpMeterLevel {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 50%;
 
-            padding: 1rem 0 1rem 0;
+          background-color: orange;
+          border-radius: 0 0 3px 3px;
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .modalTitle {
-                margin: 0 0 0 0;
-                padding: 0 0 0 0;
-
-
-                color: #353535;
-            }
-            .modalSubTitle {
-                margin: 0 0 0.5rem 0;
-                padding: 0;
-
-                color: #353535;
-            }
-            .divider {
-                margin: 0;
-                padding: 0;
-
-                height: 2px;
-                width: calc(100% - 6rem);
-
-                border-bottom: 1px solid rgb(187, 214, 219);
-                border-radius: 50%;
-
-                background-color: rgb(181, 230, 240);
-            }
-        }
-        .modalContent {
-            flex: 1 0;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            padding: 0 3rem 0 3rem;
-
-            width: 100%;
-
-            .modalContentItem {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-content: center;
-
-                width: 100%;
-
-                margin: 0;
-                padding: 0;
-            }
-            .accordion {
-                padding: 1rem 0 1rem 0;
-
-                .accordionTitle {
-                    margin: 0;
-                    padding: 0;
-
-                    font-family: 'Nunito', sans-serif;
-                    font-size: 2rem;
-
-                    color: #353535;
-                }
-                .accordionOpener {
-                    margin: 0;
-                    padding: 0;
-
-                    color: #353535;
-
-                    transform: translateY(0.5rem);
-                }
-            }
-        }
-
-        .btnC {
-            display: flex;
-
-            justify-content: center;
-
-            width: 100%;
-
-            margin: 1rem 0 0 0;
-            padding: 0.75rem 0 0.75rem 0;
-
-
-            border-radius: 10px;
-        }
-        .btnBlue {
-            background-color: #25b7d3;
-            color: white;
-        }
-        .btnRed {
-            background-color: #ee403f;
-            color: white;
-
-            margin-right: 1rem;
-
-
-        }
-        .btnGreen {
-            background-color: #19d15c;
-            color: white;
-        }
-        .btnTitle {
-            margin: 0;
-            padding: 0;
-
-            font-family: 'Nunito', sans-serif;
-            font-size: 3rem;
-            font-weight: 300;
-
-            transform: translateY(0.2rem);
+          transition-duration: 300ms;
 
         }
 
-        .modalFooter {
-            flex: 0 1;
+        .pumpMeterLevelCurrent {
+          font-size: 2rem;
 
-            display: flex;
-            flex-direction: row;
+          margin: 0;
+          padding: 0;
 
-            margin: 0;
-            padding: 0 3rem 3rem 3rem;
-
-
+          transform: translateY(-2.5rem);
         }
+
+      }
     }
+
+    .pumpMeterCapacity {
+      position: absolute;
+      top: 9.1rem;
+      left: 3.1rem;
+      font-size: 2rem;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pumpMeterLevelMax {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: absolute;
+      top: 12rem;
+      left: 9.66rem;
+      font-size: 2rem;
+
+    }
+
+    .pumpMeterLevelMid {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: absolute;
+      top: 35rem;
+      left: 9.66rem;
+      font-size: 2rem;
+
+    }
+
+    .pumpMeterLevelMin {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: absolute;
+      top: 58rem;
+      left: 9.66rem;
+      font-size: 2rem;
+    }
+
+    .modalPumpControls {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      padding: 0 3rem 3rem 0;
+
+      width: 55%;
+      height: 100%;
+
+    }
+
+    .modalPumpControlRatios {
+      display: flex;
+      flex-direction: column;
+
+      margin: 1.5rem 0 0 0;
+      padding: 1rem;
+      border: 2px solid rgb(181, 230, 240);
+      border-radius: 3px;
+
+    }
+
+    .pumpRatioTitle {
+      margin: auto;
+      padding: 0;
+      font-size: 2.5rem;
+
+    }
+
+    .pumpRatioFosf, .pumpRatioLipea, .pumpRatioVesi {
+      margin: 1rem 0 0 0;
+      padding: 0;
+      font-size: 2rem;
+    }
+    .modalPumpControlButtons .btnC {
+      font-size: 80%;
+    }
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+    background-color: white;
+
+    border-radius: 3px;
+    box-shadow: 0 0 21px -10px rgba(0, 0, 0, 0.75);
+
+    .modalHeader {
+      flex: 0 1;
+
+      padding: 1rem 0 1rem 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .modalTitle {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+
+        color: #353535;
+      }
+      .modalSubTitle {
+        margin: 0 0 0.5rem 0;
+        padding: 0;
+
+        color: #353535;
+      }
+      .divider {
+        margin: 0;
+        padding: 0;
+
+        height: 2px;
+        width: calc(100% - 6rem);
+
+        border-bottom: 1px solid rgb(187, 214, 219);
+        border-radius: 50%;
+
+        background-color: rgb(181, 230, 240);
+      }
+    }
+    .modalContent {
+      flex: 1 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 0 3rem 0 3rem;
+
+      width: 100%;
+
+      .modalContentItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+      }
+      .accordion {
+        padding: 1rem 0 1rem 0;
+
+        .accordionTitle {
+          margin: 0;
+          padding: 0;
+
+          font-family: 'Nunito', sans-serif;
+          font-size: 2rem;
+
+          color: #353535;
+        }
+        .accordionOpener {
+          margin: 0;
+          padding: 0;
+
+          color: #353535;
+
+          transform: translateY(0.5rem);
+        }
+      }
+    }
+
+    .btnC {
+      display: flex;
+
+      justify-content: center;
+
+      width: 100%;
+
+      margin: 1rem 0 0 0;
+      padding: 0.75rem 0 0.75rem 0;
+
+      border-radius: 10px;
+    }
+    .btnBlue {
+      background-color: #25b7d3;
+      color: white;
+    }
+    .btnRed {
+      background-color: #ee403f;
+      color: white;
+
+      margin-right: 1rem;
+
+    }
+    .btnGreen {
+      background-color: #19d15c;
+      color: white;
+    }
+    .btnTitle {
+      margin: 0;
+      padding: 0;
+
+      font-family: 'Nunito', sans-serif;
+      font-size: 3rem;
+      font-weight: 300;
+
+      transform: translateY(0.2rem);
+
+    }
+
+    .modalFooter {
+      flex: 0 1;
+
+      display: flex;
+      flex-direction: row;
+
+      margin: 0;
+      padding: 0 3rem 3rem 3rem;
+
+    }
+  }
 
 }
 
-
-
-
 header {
-    text-align: center;
-    border-bottom:.1em solid rgba(34, 186, 211, 0.5);
+  text-align: center;
+  border-bottom: .1em solid rgba(34, 186, 211, 0.5);
 }
 
 .align-left {
-    float: left !important;
+  float: left !important;
 }
 
 #eq-name {
-    font-size: 2em;
-    line-height: 0.8em;
-    display: inline-block;
+  font-size: 2em;
+  line-height: 0.8em;
+  display: inline-block;
 }
 
 .v {
-    display: inline-block;
+  display: inline-block;
 }
 
 .btn.btn-success {
-    color: #707070 !important;
-    background-color: #ffffff;
-    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-    border-color: #ffffff #ffffff #ffffff;
+  color: #707070 !important;
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+  border-color: #ffffff #ffffff #ffffff;
 }
 
 .btn.btn-success:hover {
-    color: #707070;
-    background-color: #ffffff;
-    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
-    border-color: #ffffff #ffffff #ffffff;
+  color: #707070;
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+  border-color: #ffffff #ffffff #ffffff;
 }
 
-.kks{
-    font-size:initial;
-    text-align:inherit;
+.pumpCloseButton {
+  position: absolute;
+  top: 3rem;
+  left: 1.5rem;
+
+  transform: scale(2);
 }
 
+.kks {
+  font-size: initial;
+  text-align: inherit;
+}
 
 .routerItem {
-    display: none;
+  display: none;
 
+  height: 640px;
+  width: 360px;
 
-    height: 640px;
-    width: 360px;
-
-    z-index: 99999;
+  z-index: 99999;
 }
-
 
 /*MAIN LAYOUT GRID*/
 .pumpContainer {
-    display: grid;
-    grid-template-columns: 35% auto;
-    grid-template-rows: 4em 0.5em 25% auto 40%;
-    grid-template-areas:    "header header"
-    ". ."
-    "meter recipe"
-    "meter ."
-    "meter btns";
-    grid-column-gap: 0.5em;
-    grid-row-gap: 0.5em;
-    padding: 0.4em;
-    height: 100%;
-    width: 100%; /*stretch to the full width and height of the device.*/
-    top: 2rem;
-    left: 2rem;
-    border-radius: 3px;
-    box-shadow: 0 0 21px -10px rgba(0,0,0,0.75);
-    background-color: white;
+  display: grid;
+  grid-template-columns: 35% auto;
+  grid-template-rows: 4em 0.5em 25% auto 40%;
+  grid-template-areas: "header header" ". ." "meter recipe" "meter ." "meter btns";
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  padding: 0.4em;
+  height: 100%;
+  width: 100%; /*stretch to the full width and height of the device.*/
+  top: 2rem;
+  left: 2rem;
+  border-radius: 3px;
+  box-shadow: 0 0 21px -10px rgba(0, 0, 0, 0.75);
+  background-color: white;
 }
 
 .head {
-    grid-area: header;
-    padding: 0.3em;
+  grid-area: header;
+  padding: 0.3em;
 }
 
 .meter {
-    grid-area: meter;
-    padding: 0.3em;
-    border: 0.1em solid #707070;
+  grid-area: meter;
+  padding: 0.3em;
+  border: 0.1em solid #707070;
 }
 
 .recipe {
-    grid-area: recipe;
-    padding: 0.3em;
-    border: 0.1em solid rgba(34, 186, 211, 0.5);
+  grid-area: recipe;
+  padding: 0.3em;
+  border: 0.1em solid rgba(34, 186, 211, 0.5);
 }
 
-#suhde{
-    text-align:center;
+#suhde {
+  text-align: center;
 }
-
-
 
 /*BUTTON NESTED GRID & BUTTON AREA (MAIN LAYOUT GRID)*/
 .btns {
-    grid-area: btns;
-    padding: 0.3em;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:    "kaavio"
-    "taytto"
-    "historia";
-    display: grid;
+  grid-area: btns;
+  padding: 0.3em;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "kaavio" "taytto" "historia";
+  display: grid;
 }
 
 .kaavio {
-    grid-area: kaavio;
-    text-align: center;
+  grid-area: kaavio;
+  text-align: center;
 }
 
 .taytto {
-    grid-area: taytto;
-    text-align: center;
+  grid-area: taytto;
+  text-align: center;
 }
 
 .historia {
-    grid-area: historia;
-    text-align: center;
+  grid-area: historia;
+  text-align: center;
 }
 
 /*BUTTON*/
 .btn-primary {
-    background-color: #22BAD3;
-    border-color: #22BAD3;
-    width: 10em;
-    height: 4em;
-    margin: 0.2em
+  background-color: #22BAD3;
+  border-color: #22BAD3;
+  width: 10em;
+  height: 4em;
+  margin: 0.2em
 }
