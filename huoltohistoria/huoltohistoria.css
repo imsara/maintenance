@@ -1,0 +1,84 @@
+﻿
+header{
+    text-align: center;
+    
+}
+
+#huoltohistoria {
+    text-align: center !important;
+    font-size: 1.5em;
+    display: inline-block;
+    line-height: 0.8em;
+}
+
+#kks {
+    text-align: center;
+    border-bottom: 0.1em solid rgba(34, 186, 211, 0.5);
+}
+
+.mainthistory {
+    padding: 1em;
+}
+
+
+/*Maintenance entries & descriptions*/
+.descdroparrow{
+    display: inline-block;
+    margin: 0.5em; 
+    line-height: 2em !important;
+}
+
+.accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #ebebeb;
+    overflow:scroll;
+}
+
+a.button {
+    padding: 0.5em;
+    text-decoration: none;
+    color: initial;
+    cursor:pointer;
+}
+
+.historycontainer{
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+   padding: 0.3em;
+}   
+
+.maintdate{
+    font-size: 0.9em;
+}
+
+.mainttitle{
+    font-size: 1.1em;
+}
+
+.maintdesc{
+ 
+}
+
+.align-left {
+    float: left !important;
+}
+
+.align-right {
+    float: right !important;
+}

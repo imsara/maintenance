@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="huoltohistoria.css">
+    <title>huoltohistoria</title>
+    <script src="https://kit.fontawesome.com/d448419d99.js" crossorigin="anonymous"></script>
+</head>
+<body class="mainthistory">
+    <header>
+        <a class="accordionOpener fas fa-chevron-down align-left button"></a>
+        <div id="huoltohistoria">HUOLTOHISTORIA</div>
+        <div id="kks">20QCA10BB001</div> <!---hae jstn -->
+    </header>
+
+    <button class="historycontainer accordion">
+        <div class="fas fa-chevron-down align-right descdroparrow"></div>
+        <div class="maintdate">30.11.2019</div>
+        <div class="mainttitle">Täyttö</div>
+    </button>
+    <div class="maintdesc panel">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+    <button class="historycontainer accordion">
+        <div class="fas fa-chevron-down align-right descdroparrow"></div>
+        <div class="maintdate">26.11.2019</div>
+        <div class="mainttitle">Tarkastus</div>
+    </button>
+    <div class="maintdesc panel">Tarkistettiin hana ja venttiilien oikea asento.</div>
+
+
+    <!--Maintenance description accordion script-->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
