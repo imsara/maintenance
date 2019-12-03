@@ -2,115 +2,125 @@
 <html>
 
 <head>
-    <title>IV API Testing App</title>
+    <title>Maintenance Helper</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d448419d99.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-<indoorviewer></indoorviewer>
-<!--<div id="myPOIViewer">
-    <div>
-        <h1 id="myPOITitle">Title</h1>
-        <div id="myPOIDescription">
-            Description
-        </div>
-    </div>
-    <div>
-        <button>Close button</button>
-    </div>
-</div>-->
-<div class="routerContainer">
-    <!-- PUMP OPTIONS -->
-    <div class="routerItem routerPump">
-        <div class="pumpContainer">
-            <header class="head">
-                <div class="v align-left">
-                    <button type="button" class="btn btn-success btn-lg">
-                        <span class="glyphicon glyphicon-chevron-down">&#9660;</span>
-                    </button>
-                </div>
-                <div id="eq-name">Säiliö</div>
-                <div class="kks">20QCA10BB001</div>
-            </header>
-            <div class="meter">
-                <br>M<br>I<br>T<br>T<br>A<br>R<br>I
-            </div>
-            <div class="recipe">
-                <h5 id="suhde">SUHDE:</h5>
-                <ul>
-                    <li>Fosfaatti: 1 kg</li>
-                    <li>Lipeä: 0.2 kg</li>
-                    <li>Vesi: 500 L</li>
-                </ul>
-            </div>
-            <div class="btns">
-                <div class="kaavio">
-                    <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">PI-kaavio</span>
-                    </button>
-                </div>
-                <div class="taytto">
-                    <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">Säiliön täyttö</span>
-                    </button>
-                </div>
-                <div class="historia">
-                    <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">Historia</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <indoorviewer></indoorviewer>
 
-
-    <!-- SÄILIÖN TÄYTTÖ -->
-    <div class="routerItem routerSailio">
-        <div class="modal">
-            <div class="modalHeader">
-                <h1 class="modalTitle">SÄILÖN TÄYTTÖ</h1>
-                <h4 class="modalSubTitle">20QCA10BB001</h4>
-                <div class="divider"></div>
-            </div>
-
-            <div class="modalContent">
-                <div class="modalContentItem accordion">
-                    <h1 class="accordionTitle">Turvaohjeet</h1>
-                    <i class="accordionOpener fas fa-chevron-down"></i>
-                </div>
-                <div class="modalContentItem accordion">
-                    <h1 class="accordionTitle">Fosfaatin lisäys -ohje (video)</h1>
-                    <i class="accordionOpener fas fa-chevron-down"></i>
-                </div>
-                <div class="modalContentItem accordion">
-                    <h1 class="accordionTitle">Fosfaatin lisäys -ohje (teksti)</h1>
-                    <i class="accordionOpener fas fa-chevron-down"></i>
-                </div>
-                <div class="modalContentItem">
-                    <div id="btnStartMixing" class="btnC btnBlue">
-                        <h1 class="btnTitle">LAVAT PÄÄLLE</h1>
+    <div class="routerContainer">
+        <!-- PUMP OPTIONS -->
+        <div class="routerItem routerPump">
+            <div class="pumpContainer">
+                <header class="head">
+                    <div class="v align-left">
+                        <button type="button" class="btn btn-success btn-lg">
+                            <span class="glyphicon glyphicon-chevron-down">&#9660;</span>
+                        </button>
                     </div>
+                    <div id="eq-name">Säiliö</div>
+                    <div class="kks">20QCA10BB001</div>
+                </header>
+                <div class="meter">
+                    <br>M<br>I<br>T<br>T<br>A<br>R<br>I
                 </div>
-                <div class="modalContentItem">
-                    <div id="btnContactCenter" class="btnC btnBlue">
-                        <h1 class="btnTitle">SOITA VALVOMOON</h1>
+                <div class="recipe">
+                    <h5 id="suhde">SUHDE:</h5>
+                    <ul>
+                        <li>Fosfaatti: 1 kg</li>
+                        <li>Lipeä: 0.2 kg</li>
+                        <li>Vesi: 500 L</li>
+                    </ul>
+                </div>
+                <div class="btns">
+                    <div class="kaavio">
+                        <button id="btnKaavio" type="button" class="btn btn-primary "><span
+                                style="font-size:1.3em;">PI-kaavio</span>
+                        </button>
+                    </div>
+                    <div class="taytto">
+                        <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">Säiliön
+                                täyttö</span>
+                        </button>
+                    </div>
+                    <div class="historia">
+                        <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">Historia</span>
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="modalFooter">
-                <div id="btnCancel" class="btnC btnRed">
-                    <h1 class="btnTitle">PERUUTA</h1>
+
+        <!-- SÄILIÖN TÄYTTÖ -->
+        <div class="routerItem routerSailio">
+            <div class="modal">
+                <div class="modalHeader">
+                    <h1 class="modalTitle">SÄILÖN TÄYTTÖ</h1>
+                    <h4 class="modalSubTitle">20QCA10BB001</h4>
+                    <div class="divider"></div>
                 </div>
-                <div id="btnSucceed" class="btnC btnGreen">
-                    <h1 class="btnTitle">VALMIS</h1>
+
+                <div class="modalContent">
+                    <div class="modalContentItem accordion">
+                        <h1 class="accordionTitle">Turvaohjeet</h1>
+                        <i class="accordionOpener fas fa-chevron-down"></i>
+                    </div>
+                    <div class="modalContentItem accordion" id="video">
+                        <h1 class="accordionTitle">Fosfaatin lisäys -ohje (video)</h1>
+                        <i class="accordionOpener fas fa-chevron-down"></i>
+                    </div>
+                    <div class="modalContentItem accordion">
+                        <h1 class="accordionTitle">Fosfaatin lisäys -ohje (teksti)</h1>
+                        <i class="accordionOpener fas fa-chevron-down"></i>
+                    </div>
+                    <div class="modalContentItem">
+                        <div id="btnStartMixing" class="btnC btnBlue">
+                            <h1 class="btnTitle">LAVAT PÄÄLLE</h1>
+                        </div>
+                    </div>
+                    <div class="modalContentItem">
+                        <div id="btnContactCenter" class="btnC btnBlue">
+                            <h1 class="btnTitle">SOITA VALVOMOON</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modalFooter">
+                    <div id="btnCancel" class="btnC btnRed">
+                        <h1 class="btnTitle">PERUUTA</h1>
+                    </div>
+                    <div id="btnSucceed" class="btnC btnGreen">
+                        <h1 class="btnTitle">VALMIS</h1>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- PI-Kaavio -->
+
+        <div class="routerItem routerKaavio">
+            <div class="modal">
+                <div class="modalContent">
+                    <iframe id="imgPi"
+                        src="https://lh3.googleusercontent.com/qkdtF-2b_gucDhRgT5-1KWIhzeHUcrConrFOeoy6pefc6zCW6Bxn0ijwKfbZ7rdUnKcMDCVa1m13jyNgBsGnoLvIDFa8Yx3xrlewIha0TChfjHnQ1WTdGUihXIXsU5kbD0TNxx9e=w2400"
+                        style='position:absolute; top:0px; left:0px; height:100%;width:100%;'></iframe>
+                </div>
+                <div class="modalFooter">
+                    <div id="btnClose" class="btnC btnBlack">
+                        <h1 class="btnTitle">SULJE</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="backDrop"></div>
     </div>
 
 
-    <div class="backDrop"></div>
-</div>
 </body>
 
 </html>

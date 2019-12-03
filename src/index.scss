@@ -2,16 +2,6 @@ indoorviewer {
 	height: 100vh;
 }
 
-/*#myPOIViewer {
-	position: absolute;
-	top: 460px;
-	left: 500px;
-	width: 350px;
-	z-index: 1000;
-	display: none;
-	background-color: #ee0;
-}*/
-
 html, body {
     height: 100%;
     width: 100%;
@@ -172,6 +162,14 @@ html, body {
         .btnRed {
             background-color: #ee403f;
             color: white;
+
+            margin-right: 1rem;
+
+
+        }
+        .btnBlack {
+            background-color: #ee403f;
+            color: black;
 
             margin-right: 1rem;
 
