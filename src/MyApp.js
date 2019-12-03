@@ -1,8 +1,9 @@
 let MyApp = (function() {
 
     let poiViewer = null;
+
     let routerItems = document.querySelectorAll(".routerItem");
-    console.log(routerItems);
+    let meterClock;
 
     /* elements for säiliöntäyttö */
     let sailioCloseButton = document.querySelector(".routerSailio #btnCancel");
@@ -28,16 +29,67 @@ let MyApp = (function() {
 
 
     /* elements for pumpoptions */
-    let pumpSailioButton = document.querySelector(".taytto button");
+    let pumpSailioButton = document.querySelector("#fillBtn");
     pumpSailioButton.addEventListener("click" , () => {
         router(1);
     });
-    let pumpCloseButton = document.querySelector(".v");
+    let pumpCloseButton = document.querySelector(".pumpCloseButton");
 
+
+    /* pump meter functions */
+
+    const setPumpMeterLevel = (level) => {
+        localStorage.setItem("meterLevel", level);
+    };
+
+    setPumpMeterLevel(1000);
+
+    const addPumpMeterLevel = (level) => {
+        let newLevel = parseInt(localStorage.getItem("meterLevel"));
+        newLevel += level;
+
+        if (newLevel <= 0) {
+            newLevel = 0;
+        } else if (newLevel >= 1000) {
+            newLevel = 1000;
+        }
+        localStorage.setItem("meterLevel", newLevel);
+    };
+
+
+    const refreshMeterLevel = (levelEl, titleEl) => {
+        let level = localStorage.getItem("meterLevel");
+        if (level <= 10) {
+            levelEl.style.height = "1%";
+        } else {
+            levelEl.style.height = level / 10 + "%";
+
+        }
+        if (level <= 50){
+            levelEl.style.backgroundColor = "#f91a00"
+
+        } else if (level < 500) {
+            levelEl.style.backgroundColor = "#FFC707"
+        } else {
+            levelEl.style.backgroundColor = "#40df00"
+        }
+        if (level <= 950) {
+            titleEl.innerText = level + " L";
+        } else {
+            titleEl.innerText = "";
+        }
+        if (level === 1000) {
+            levelEl.style.borderRadius = "3px"
+        } else {
+            levelEl.style.borderRadius = "0 0 3px 3px"
+        }
+
+    };
 
 
     const initPoiViewer = function(selector) {
         pumpCloseButton.addEventListener("click", closePoi);
+        document.querySelector(".backDrop").addEventListener("click", closePoi);
         poiViewer = {
           dom: document.querySelector(selector)
         }
@@ -49,6 +101,19 @@ let MyApp = (function() {
         document.querySelector(".routerContainer").style.display = "flex";
         document.querySelector(".routerContainer .backDrop").style.display = "flex";
         poiViewer.dom.style.display = "flex";  // Display HTML template
+
+
+       /* refreshes meter level when opened */
+        refreshMeterLevel(  document.querySelector(".pumpMeterLevel"),
+            document.querySelector(".pumpMeterLevelCurrent"));
+
+        /* starts meter clock*/
+        meterClock = setInterval( () => {
+            addPumpMeterLevel(-10);
+            refreshMeterLevel(  document.querySelector(".pumpMeterLevel"),
+                document.querySelector(".pumpMeterLevelCurrent"));
+        }, 1000);
+
     }
 
     const closePoi = function() {
@@ -60,6 +125,7 @@ let MyApp = (function() {
             routerItem.style.display = "none";
         }
         poiViewer.dom.style.display = "none";
+        clearInterval(meterClock);
     }
 
 
@@ -71,7 +137,14 @@ let MyApp = (function() {
                 console.log(routerItem)
             } else {
                 routerItem.style.display = "flex";
+
             }
+        }
+
+        if (n === 0) {
+            refreshMeterLevel( {levelCurrent: document.querySelector(".pumpMeterLevel"),
+                levelCurrentTitle: document.querySelector(".pumpMeterLevelCurrent")
+            });
         }
     }
 
