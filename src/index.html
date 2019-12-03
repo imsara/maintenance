@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  
+
 <indoorviewer></indoorviewer>
-  
+
 <div class="routerContainer">
     <!-- PUMP OPTIONS -->
     <div class="routerItem routerPump">
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="modalPumpControlButtons">
-                        <div id="btnKaavio"  class="btnC btnBlue">
+                        <div id="btnKaavio" class="btnC btnBlue">
                             <h1 class="btnTitle">PI-KAAVIO</h1>
                         </div>
                         <div id="fillBtn" class="btnC btnBlue">
@@ -65,71 +65,120 @@
             </div>
         </div>
 
-        <!-- SÄILIÖN TÄYTTÖ -->
-        <div class="routerItem routerSailio">
-            <div class="modal">
-                <div class="modalHeader">
-                    <h1 class="modalTitle">SÄILÖN TÄYTTÖ</h1>
-                    <h4 class="modalSubTitle">20QCA10BB001</h4>
-                    <div class="divider"></div>
-                </div>
 
-                <div class="modalContent">
-                    <div class="modalContentItem accordion">
-                        <h1 class="accordionTitle">Turvaohjeet</h1>
-                        <i class="accordionOpener fas fa-chevron-down"></i>
-                    </div>
-                    <div class="modalContentItem accordion" id="video">
-                        <h1 class="accordionTitle">Fosfaatin lisäys -ohje (video)</h1>
-                        <i class="accordionOpener fas fa-chevron-down"></i>
-                    </div>
-                    <div class="modalContentItem accordion">
-                        <h1 class="accordionTitle">Fosfaatin lisäys -ohje (teksti)</h1>
-                        <i class="accordionOpener fas fa-chevron-down"></i>
-                    </div>
-                    <div class="modalContentItem">
-                        <div id="btnStartMixing" class="btnC btnBlue">
-                            <h1 class="btnTitle">LAVAT PÄÄLLE</h1>
-                        </div>
-                    </div>
-                    <div class="modalContentItem">
-                        <div id="btnContactCenter" class="btnC btnBlue">
-                            <h1 class="btnTitle">SOITA VALVOMOON</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modalFooter">
-                    <div id="btnCancel" class="btnC btnRed">
-                        <h1 class="btnTitle">PERUUTA</h1>
-                    </div>
-                    <div id="btnSucceed" class="btnC btnGreen">
-                        <h1 class="btnTitle">VALMIS</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PI-Kaavio -->
-
-        <div class="routerItem routerKaavio">
-            <div class="modal">
-                <div class="modalContent">
-                    <iframe id="imgPi"
-                        src="https://lh3.googleusercontent.com/qkdtF-2b_gucDhRgT5-1KWIhzeHUcrConrFOeoy6pefc6zCW6Bxn0ijwKfbZ7rdUnKcMDCVa1m13jyNgBsGnoLvIDFa8Yx3xrlewIha0TChfjHnQ1WTdGUihXIXsU5kbD0TNxx9e=w2400"
-                        style='position:absolute; top:0px; left:0px; height:100%;width:100%;'></iframe>
-                </div>
-                <div class="modalFooter">
-                    <div id="btnClose" class="btnC btnBlack">
-                        <h1 class="btnTitle">SULJE</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="backDrop"></div>
     </div>
 
+    <!-- SÄILIÖN TÄYTTÖ -->
+    <div class="routerItem routerSailio">
+        <div class="modal">
+            <div class="modalHeader">
+                <h1 class="modalTitle">SÄILÖN TÄYTTÖ</h1>
+                <h4 class="modalSubTitle">20QCA10BB001</h4>
+                <div class="divider"></div>
+            </div>
+
+            <div class="modalContent">
+                <div class="modalContentItem accordion">
+                    <h1 class="accordionTitle">Turvaohjeet</h1>
+                    <i class="accordionOpener fas fa-chevron-down"></i>
+                </div>
+                <div class="modalContentItem accordion" id="video">
+                    <h1 class="accordionTitle">Fosfaatin lisäys -ohje (video)</h1>
+                    <i class="accordionOpener fas fa-chevron-down"></i>
+                </div>
+                <div class="modalContentItem accordion">
+                    <h1 class="accordionTitle">Fosfaatin lisäys -ohje (teksti)</h1>
+                    <i class="accordionOpener fas fa-chevron-down"></i>
+                </div>
+                <div class="modalContentItem">
+                    <div id="btnStartMixing" class="btnC btnBlue">
+                        <h1 class="btnTitle">SEKOITIN PÄÄLLE</h1>
+                    </div>
+                </div>
+                <div class="modalContentItem">
+                    <div id="btnContactCenter" class="btnC btnBlue">
+                        <h1 class="btnTitle">SOITA VALVOMOON</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modalFooter">
+                <div id="btnCancel" class="btnC btnRed">
+                    <h1 class="btnTitle">PERUUTA</h1>
+                </div>
+                <div id="btnSucceed" class="btnC btnGreen">
+                    <h1 class="btnTitle">VALMIS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PI-Kaavio -->
+    <div class="routerItem routerKaavio">
+        <div class="modal">
+            <div class="modalContent">
+                <iframe id="imgPi"
+                        src="https://lh3.googleusercontent.com/qkdtF-2b_gucDhRgT5-1KWIhzeHUcrConrFOeoy6pefc6zCW6Bxn0ijwKfbZ7rdUnKcMDCVa1m13jyNgBsGnoLvIDFa8Yx3xrlewIha0TChfjHnQ1WTdGUihXIXsU5kbD0TNxx9e=w2400"
+                        style='position:absolute; top:0px; left:0px; height:100%;width:100%;'></iframe>
+            </div>
+            <div class="modalFooter">
+                <div id="btnClose" class="btnC btnBlack">
+                    <h1 class="btnTitle">SULJE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HHISTORY -->
+    <div class="routerItem routerHistoriy">
+        <div class="modal">
+            <div class="modalHeader">
+                <h1 class="modalTitle">HUOLTOHISTORIA</h1>
+                <h4 class="modalSubTitle">20QCA10BB001</h4>
+                <div class="divider"></div>
+            </div>
+
+            <div class="modalContent">
+                <button class="historycontainer accordion">
+                    <div class="fas fa-chevron-down align-right descdroparrow"></div>
+                    <div class="maintdate">30.11.2019</div>
+                    <div class="mainttitle">Täyttö</div>
+                </button>
+                <div class="maintdesc panel">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+                <button class="historycontainer accordion">
+                    <div class="fas fa-chevron-down align-right descdroparrow"></div>
+                    <div class="maintdate">26.11.2019</div>
+                    <div class="mainttitle">Tarkastus</div>
+                </button>
+                <div class="maintdesc panel">Tarkistettiin hana ja venttiilien oikea asento.</div>
+
+
+                <!--Maintenance description accordion script-->
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+                    for (i = 0; i < acc.length; i++) {
+                        acc[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var panel = this.nextElementSibling;
+                            if (panel.style.maxHeight) {
+                                panel.style.maxHeight = null;
+                            } else {
+                                panel.style.maxHeight = panel.scrollHeight + "px";
+                            }
+                        });
+                    }
+                </script>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="backDrop"></div>
+</div>
 
 </body>
 

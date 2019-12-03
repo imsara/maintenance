@@ -2,6 +2,16 @@ indoorviewer {
   height: 100vh;
 }
 
+/*#myPOIViewer {
+	position: absolute;
+	top: 460px;
+	left: 500px;
+	width: 350px;
+	z-index: 1000;
+	display: none;
+	background-color: #ee0;
+}*/
+
 html, body {
   height: 100%;
   width: 100%;
@@ -159,7 +169,7 @@ html, body {
 
       margin: 1.5rem 0 0 0;
       padding: 1rem;
-      border: 2px solid rgb(181, 230, 240);
+      border: 1px solid rgba(0, 0, 0, 0.3);
       border-radius: 3px;
 
     }
@@ -221,13 +231,11 @@ html, body {
         margin: 0;
         padding: 0;
 
-        height: 2px;
+        height: 1px !important;
         width: calc(100% - 6rem);
 
-        border-bottom: 1px solid rgb(187, 214, 219);
-        border-radius: 50%;
 
-        background-color: rgb(181, 230, 240);
+        background-color: rgba(0, 0, 0, 0.3);
       }
     }
     .modalContent {
@@ -272,13 +280,9 @@ html, body {
 
           transform: translateY(0.5rem);
         }
-     }
-    .btnBlack {
-       background-color: #ee403f;
-       color: black;
+      }
+    }
 
-       margin-right: 1rem;
-     }
     .btnC {
       display: flex;
 
@@ -289,7 +293,7 @@ html, body {
       margin: 1rem 0 0 0;
       padding: 0.75rem 0 0.75rem 0;
 
-      border-radius: 10px;
+      border-radius: 3px;
     }
     .btnBlue {
       background-color: #25b7d3;
@@ -458,4 +462,68 @@ header {
   width: 10em;
   height: 4em;
   margin: 0.2em
+}
+
+/*Maintenance entries & descriptions*/
+.descdroparrow{
+  display: inline-block;
+  margin: 0.5em;
+  line-height: 2em !important;
+}
+
+.accordion {
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #ebebeb;
+  overflow:scroll;
+}
+
+a.button {
+  padding: 0.5em;
+  text-decoration: none;
+  color: initial;
+  cursor:pointer;
+}
+
+.historycontainer{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.3em;
+
+
+}
+
+.maintdate{
+  font-size: 0.9em;
+}
+
+.mainttitle{
+  font-size: 1.1em;
+}
+
+.maintdesc{
+  overflow: hidden;
+}
+
+.align-left {
+  float: left !important;
+}
+
+.align-right {
+  float: right !important;
 }

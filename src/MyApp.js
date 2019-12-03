@@ -8,17 +8,21 @@ let MyApp = (function() {
     /* elements for säiliöntäyttö */
     let sailioCloseButton = document.querySelector(".routerSailio #btnCancel");
     let sailioSucceedButton = document.querySelector("#btnSucceed");
-    let kaavioCloseButton = document.querySelector(".routerKaavio #btnClose")
+    let kaavioCloseButton = document.querySelector(".routerKaavio #btnClose");
+    let historyButton = document.querySelector("#historyBtn");
     let video = document.querySelector("#video");
     let kaavioButton = document.querySelector("#btnKaavio");
-    sailioSucceedButton.addEventListener("click" , () => {
-        router(0);
-    });
+
+
+
     sailioCloseButton.addEventListener("click", () => {
         router(0);
     });
     kaavioCloseButton.addEventListener("click", () => {
         router(0);
+    });
+    historyButton.addEventListener("click" , () => {
+        router(3);
     });
     video.addEventListener("click", () => {
         link("https://esite.viar360.com/virtual/story/play/F9A6498E-181D-0B14-A285-E74CF38E954A?getiframedimensions=true&ui=false&video_cmd=false");
@@ -26,6 +30,7 @@ let MyApp = (function() {
     kaavioButton.addEventListener("click", () => {
         router(2);
     });
+
 
 
     /* elements for pumpoptions */
@@ -37,13 +42,10 @@ let MyApp = (function() {
 
 
     /* pump meter functions */
-
     const setPumpMeterLevel = (level) => {
         localStorage.setItem("meterLevel", level);
     };
-
     setPumpMeterLevel(1000);
-
     const addPumpMeterLevel = (level) => {
         let newLevel = parseInt(localStorage.getItem("meterLevel"));
         newLevel += level;
@@ -55,15 +57,12 @@ let MyApp = (function() {
         }
         localStorage.setItem("meterLevel", newLevel);
     };
-
-
     const refreshMeterLevel = (levelEl, titleEl) => {
         let level = localStorage.getItem("meterLevel");
         if (level <= 10) {
             levelEl.style.height = "1%";
         } else {
             levelEl.style.height = level / 10 + "%";
-
         }
         if (level <= 50){
             levelEl.style.backgroundColor = "#f91a00"
@@ -83,8 +82,11 @@ let MyApp = (function() {
         } else {
             levelEl.style.borderRadius = "0 0 3px 3px"
         }
-
     };
+    sailioSucceedButton.addEventListener("click" , () => {
+        router(0);
+    });
+
 
 
     const initPoiViewer = function(selector) {
