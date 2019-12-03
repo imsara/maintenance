@@ -32,8 +32,12 @@
                         <h1 class="pumpMeterTag pumpMeterLevelMax">- MAX</h1>
                         <h1 class="pumpMeterTag pumpMeterLevelMid">- 500 L</h1>
                         <h1 class="pumpMeterTag pumpMeterLevelMin">- MIN</h1>
+
                         <div class="pumpMeterLevel">
                             <h1 class="pumpMeterLevelCurrent">100 L</h1>
+                        </div>
+
+                        <div class="pumpMeterFillLevel">
                         </div>
 
                     </div>
@@ -43,10 +47,11 @@
                 <div class="modalPumpControls">
 
                     <div class="modalPumpControlRatios">
-                        <h1 class="pumpRatioTitle">SUHTEET</h1>
+                        <h1 class="pumpRatioTitle">SUHTEET <i class="fas fa-sync-alt refreshFillLevelBtn"></i></h1>
                         <h2 class="pumpRatioFosf">Fosfaatti: 1 kg</h2>
                         <h2 class="pumpRatioLipea">Lipeä: 0.2 kg</h2>
                         <h2 class="pumpRatioVesi">Vesi: 500 L</h2>
+
                     </div>
 
                     <div class="modalPumpControlButtons">
@@ -130,12 +135,13 @@
     </div>
 
     <!-- HHISTORY -->
-    <div class="routerItem routerHistoriy">
+    <div class="routerItem routerHistory">
         <div class="modal">
             <div class="modalHeader">
                 <h1 class="modalTitle">HUOLTOHISTORIA</h1>
                 <h4 class="modalSubTitle">20QCA10BB001</h4>
                 <div class="divider"></div>
+                <i class="historyCloseButton fas fa-chevron-left"></i>
             </div>
 
             <div class="modalContent">
@@ -144,7 +150,12 @@
                     <div class="maintdate">30.11.2019</div>
                     <div class="mainttitle">Täyttö</div>
                 </button>
-                <div class="maintdesc panel">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div class="maintdesc panel">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor
+                    incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
 
                 <button class="historycontainer accordion">
                     <div class="fas fa-chevron-down align-right descdroparrow"></div>
@@ -152,24 +163,6 @@
                     <div class="mainttitle">Tarkastus</div>
                 </button>
                 <div class="maintdesc panel">Tarkistettiin hana ja venttiilien oikea asento.</div>
-
-
-                <!--Maintenance description accordion script-->
-                <script>
-                    var acc = document.getElementsByClassName("accordion");
-                    var i;
-                    for (i = 0; i < acc.length; i++) {
-                        acc[i].addEventListener("click", function () {
-                            this.classList.toggle("active");
-                            var panel = this.nextElementSibling;
-                            if (panel.style.maxHeight) {
-                                panel.style.maxHeight = null;
-                            } else {
-                                panel.style.maxHeight = panel.scrollHeight + "px";
-                            }
-                        });
-                    }
-                </script>
             </div>
 
 
