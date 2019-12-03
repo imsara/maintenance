@@ -14,7 +14,8 @@ let MyApp = (function () {
     let historyButton = document.querySelector("#historyBtn");
     let video = document.querySelector("#video");
     let kaavioButton = document.querySelector("#btnKaavio");
-    console.log(kaavioButton);
+    let text = document.querySelector("#teksti");
+    let textCloseButton = document.querySelector(".routerTeksti .textCloseButton");
 
     sailioCloseButton.addEventListener("click", () => {
         router(0);
@@ -34,6 +35,12 @@ let MyApp = (function () {
     });
     historyCloseButton.addEventListener("click", () => {
         router(0);
+    });
+    text.addEventListener("click", () => {
+        router(4);
+    });
+    textCloseButton.addEventListener("click", () => {
+        router(1);
     });
 
 
