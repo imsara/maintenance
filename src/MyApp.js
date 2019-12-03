@@ -176,11 +176,11 @@ let MyApp = (function () {
 
         /* starts meter clock*/
         meterClock = setInterval(() => {
-            addPumpMeterLevel(-10);
+            addPumpMeterLevel(-1);
             refreshMeterLevel(document.querySelector(".pumpMeterLevel"),
                 document.querySelector(".pumpMeterLevelCurrent"),
                 document.querySelector(".pumpMeterFillLevel"));
-        }, 1000);
+        }, 100);
 
     };
 
@@ -213,11 +213,11 @@ let MyApp = (function () {
                 document.querySelector(".pumpMeterLevelCurrent"),
                 document.querySelector(".pumpMeterFillLevel"));
             meterClock = setInterval(() => {
-                addPumpMeterLevel(-10);
+                addPumpMeterLevel(-1);
                 refreshMeterLevel(document.querySelector(".pumpMeterLevel"),
                     document.querySelector(".pumpMeterLevelCurrent"),
                     document.querySelector(".pumpMeterFillLevel"));
-            }, 1000);
+            }, 100);
         } else if (n === 3) {
             document.querySelector(".routerHistory .modalContent").innerHTML += localStorage.getItem("newestHistory");
             localStorage.setItem("newestHistory", "");
