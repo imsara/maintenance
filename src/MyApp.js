@@ -1,7 +1,7 @@
 let MyApp = (function () {
 
     let poiViewer = null;
-
+    let modalPi = document.querySelector(".modalPi");
     let routerItems = document.querySelectorAll(".routerItem");
     let meterClock;
     localStorage.setItem("newestHistory", "");
@@ -10,16 +10,17 @@ let MyApp = (function () {
     let sailioCloseButton = document.querySelector(".routerSailio #btnCancel");
     let historyCloseButton = document.querySelector(".routerHistory .historyCloseButton");
     let sailioSucceedButton = document.querySelector("#btnSucceed");
-    let kaavioCloseButton = document.querySelector(".routerKaavio #btnClose");
+    let kaavioCloseButton = document.querySelector(".closePi");
     let historyButton = document.querySelector("#historyBtn");
     let video = document.querySelector("#video");
     let kaavioButton = document.querySelector("#btnKaavio");
-
+    console.log(kaavioButton);
 
     sailioCloseButton.addEventListener("click", () => {
         router(0);
     });
     kaavioCloseButton.addEventListener("click", () => {
+        modalPi.style.display = "none";
         router(0);
     });
     historyButton.addEventListener("click", () => {
@@ -204,7 +205,6 @@ let MyApp = (function () {
                 console.log(routerItem)
             } else {
                 routerItem.style.display = "flex";
-
             }
         }
 
@@ -236,6 +236,10 @@ let MyApp = (function () {
                 });
             }
             clearInterval(meterClock);
+        } else if (n === 2){
+            let modalPi = document.querySelector(".modalPi");
+            console.log(modalPi);
+            modalPi.style.display = "block";
         } else {
             clearInterval(meterClock);
         }
