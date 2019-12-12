@@ -16,6 +16,8 @@ let MyApp = (function () {
     let kaavioButton = document.querySelector("#btnKaavio");
     let text = document.querySelector("#teksti");
     let textCloseButton = document.querySelector(".routerTeksti .textCloseButton");
+    let turvaCloseButton = document.querySelector(".closeTu");
+    let turvaButton = document.querySelector("#turva");
 
     sailioCloseButton.addEventListener("click", () => {
         router(0);
@@ -41,6 +43,12 @@ let MyApp = (function () {
     });
     textCloseButton.addEventListener("click", () => {
         router(1);
+    });
+    turvaCloseButton.addEventListener("click", () => {
+        router(1);
+    });
+    turvaButton.addEventListener("click", () => {
+        router(5);
     });
 
 
@@ -247,6 +255,10 @@ let MyApp = (function () {
             let modalPi = document.querySelector(".modalPi");
             console.log(modalPi);
             modalPi.style.display = "block";
+        } else if (n === 5){
+            let modalTu = document.querySelector(".modalTu");
+            console.log(modalTu);
+            modalTu.style.display = "block";
         } else {
             clearInterval(meterClock);
         }
