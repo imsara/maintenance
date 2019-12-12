@@ -9,51 +9,69 @@
 <link rel="shortcut icon" href="favicon.ico"></head>
 
 <body>
+
     <indoorviewer></indoorviewer>
 
     <div class="routerContainer">
         <!-- PUMP OPTIONS -->
         <div class="routerItem routerPump">
-            <div class="pumpContainer">
-                <header class="head">
-                    <div class="v align-left">
-                        <button type="button" class="btn btn-success btn-lg">
-                            <span class="glyphicon glyphicon-chevron-down">&#9660;</span>
-                        </button>
-                    </div>
-                    <div id="eq-name">Säiliö</div>
-                    <div class="kks">20QCA10BB001</div>
-                </header>
-                <div class="meter">
-                    <br>M<br>I<br>T<br>T<br>A<br>R<br>I
+            <div class="modal">
+                <div class="modalHeader">
+                    <h1 class="modalTitle">SÄILIÖ</h1>
+                    <h4 class="modalSubTitle">20QCA10BB001</h4>
+                    <div class="divider"></div>
+                    <i class="pumpCloseButton fas fa-times 7x"></i>
                 </div>
-                <div class="recipe">
-                    <h5 id="suhde">SUHDE:</h5>
-                    <ul>
-                        <li>Fosfaatti: 1 kg</li>
-                        <li>Lipeä: 0.2 kg</li>
-                        <li>Vesi: 500 L</li>
-                    </ul>
-                </div>
-                <div class="btns">
-                    <div class="kaavio">
-                        <button id="btnKaavio" type="button" class="btn btn-primary "><span
-                                style="font-size:1.3em;">PI-kaavio</span>
-                        </button>
+                <div class="modalPumpContent">
+
+                    <div class="modalPumpMeter">
+                        <h1 class="pumpMeterTag pumpMeterCapacity">1 000 L</h1>
+
+
+                        <div class="pumpMeterContainer">
+                            <h1 class="pumpMeterTag pumpMeterLevelMax">- MAX</h1>
+                            <h1 class="pumpMeterTag pumpMeterLevelMid">- 500 L</h1>
+                            <h1 class="pumpMeterTag pumpMeterLevelMin">- MIN</h1>
+
+                            <div class="pumpMeterLevel">
+                                <h1 class="pumpMeterLevelCurrent">100 L</h1>
+                            </div>
+
+                            <div class="pumpMeterFillLevel">
+                            </div>
+
+                        </div>
+
                     </div>
-                    <div class="taytto">
-                        <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">Säiliön
-                                täyttö</span>
-                        </button>
+
+                    <div class="modalPumpControls">
+
+                        <div class="modalPumpControlRatios">
+                            <h1 class="pumpRatioTitle">SUHTEET <i class="fas fa-sync-alt refreshFillLevelBtn"></i></h1>
+                            <h2 class="pumpRatioFosf">Fosfaatti: 1 kg</h2>
+                            <h2 class="pumpRatioLipea">Lipeä: 0.2 kg</h2>
+                            <h2 class="pumpRatioVesi">Vesi: 500 L</h2>
+
+                        </div>
+
+                        <div class="modalPumpControlButtons">
+                            <div id="btnKaavio" class="btnC btnBlue">
+                                <h1 class="btnTitle">PI-KAAVIO</h1>
+                            </div>
+                            <div id="fillBtn" class="btnC btnBlue">
+                                <h1 class="btnTitle">TÄYTTÖ</h1>
+                            </div>
+                            <div id="historyBtn" class="btnC btnBlue">
+                                <h1 class="btnTitle">HISTORIA</h1>
+                            </div>
+                        </div>
                     </div>
-                    <div class="historia">
-                        <button type="button" class="btn btn-primary "><span style="font-size:1.3em;">Historia</span>
-                        </button>
-                    </div>
+
                 </div>
             </div>
-        </div>
 
+
+        </div>
 
         <!-- SÄILIÖN TÄYTTÖ -->
         <div class="routerItem routerSailio">
@@ -65,7 +83,7 @@
                 </div>
 
                 <div class="modalContent">
-                    <div class="modalContentItem accordion">
+                    <div class="modalContentItem accordion" id="turva">
                         <h1 class="accordionTitle">Turvaohjeet</h1>
                         <i class="accordionOpener fas fa-chevron-down"></i>
                     </div>
@@ -73,16 +91,16 @@
                         <h1 class="accordionTitle">Fosfaatin lisäys -ohje (video)</h1>
                         <i class="accordionOpener fas fa-chevron-down"></i>
                     </div>
-                    <div class="modalContentItem accordion">
+                    <div class="modalContentItem accordion" id="teksti">
                         <h1 class="accordionTitle">Fosfaatin lisäys -ohje (teksti)</h1>
                         <i class="accordionOpener fas fa-chevron-down"></i>
                     </div>
-                    <div class="modalContentItem">
+                    <div class="modalContentItem accordion">
                         <div id="btnStartMixing" class="btnC btnBlue">
-                            <h1 class="btnTitle">LAVAT PÄÄLLE</h1>
+                            <h1 class="btnTitle">SEKOITIN PÄÄLLE</h1>
                         </div>
                     </div>
-                    <div class="modalContentItem">
+                    <div class="modalContentItem accordion">
                         <div id="btnContactCenter" class="btnC btnBlue">
                             <h1 class="btnTitle">SOITA VALVOMOON</h1>
                         </div>
@@ -101,25 +119,101 @@
         </div>
 
         <!-- PI-Kaavio -->
-
         <div class="routerItem routerKaavio">
-            <div class="modal">
-                <div class="modalContent">
-                    <iframe id="imgPi"
-                        src="https://lh3.googleusercontent.com/qkdtF-2b_gucDhRgT5-1KWIhzeHUcrConrFOeoy6pefc6zCW6Bxn0ijwKfbZ7rdUnKcMDCVa1m13jyNgBsGnoLvIDFa8Yx3xrlewIha0TChfjHnQ1WTdGUihXIXsU5kbD0TNxx9e=w2400"
-                        style='position:absolute; top:0px; left:0px; height:100%;width:100%;'></iframe>
-                </div>
-                <div class="modalFooter">
-                    <div id="btnClose" class="btnC btnBlack">
-                        <h1 class="btnTitle">SULJE</h1>
-                    </div>
-                </div>
+            <div id="modalPi" class="modalPi">
+                <span class="closePi">&times;</span>
+                <img class="modalPiContent" id="imgPi"
+                    style="-webkit-user-select: none;margin: auto;cursor: -webkit-zoom-in; cursor: zoom-in;"
+                    src="https://lh3.googleusercontent.com/qkdtF-2b_gucDhRgT5-1KWIhzeHUcrConrFOeoy6pefc6zCW6Bxn0ijwKfbZ7rdUnKcMDCVa1m13jyNgBsGnoLvIDFa8Yx3xrlewIha0TChfjHnQ1WTdGUihXIXsU5kbD0TNxx9e=w2400"
+                    width="744" height="540">
             </div>
         </div>
 
+        <!-- HHISTORY -->
+        <div class="routerItem routerHistory">
+            <div class="modal">
+                <div class="modalHeader">
+                    <h1 class="modalTitle">HUOLTOHISTORIA</h1>
+                    <h4 class="modalSubTitle">20QCA10BB001</h4>
+                    <div class="divider"></div>
+                    <i class="historyCloseButton fas fa-chevron-left"></i>
+                </div>
+
+                <div class="modalContent">
+                    <button class="historycontainer accordion">
+                        <div class="fas fa-chevron-down align-right descdroparrow"></div>
+                        <div class="maintdate">30.11.2019</div>
+                        <div class="mainttitle">Täyttö</div>
+                    </button>
+                    <div class="maintdesc panel">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod
+                        tempor
+                        incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in
+                        voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
+                        proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+
+                    <button class="historycontainer accordion">
+                        <div class="fas fa-chevron-down align-right descdroparrow"></div>
+                        <div class="maintdate">26.11.2019</div>
+                        <div class="mainttitle">Tarkastus</div>
+                    </button>
+                    <div class="maintdesc panel">Tarkistettiin hana ja venttiilien oikea asento.</div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Tekstiohjeet -->
+        <div class="routerItem routerTeksti">
+            <div class="modal">
+                <div class="modalHeader">
+                    <h1 class="modalTitle">TEKSTIOHJEET</h1>
+                    <h4 class="modalSubTitle">20QCA10BB001</h4>
+                    <div class="divider"></div>
+                    <i class="textCloseButton fas fa-chevron-left"></i>
+                </div>
+
+                <div class="modalContent text">
+                    <h2></h2>
+                    <p>1. Tarkista säiliön vedenpinta</p>
+                    <h2></h2>
+                    <p>2. Avataan venttiilit <strong>20QCA10AA201 JA 20GHC74AA201&nbsp;</strong>hitaasti</p>
+                    <h2></h2>
+                    <p>3. Mittaa 1,5 kg fosfaattia ja 0,2 kg lipeää </p>
+                    <h2></h2>
+                    <p>4. Kun 500 L demivettä on täytetty säiliöön, lisätään fosfaatti ja lipeä luukusta säiliöön</p>
+                    <h2></h2>
+                    <p>5. Sekoittaja laitetaan päälle 10 minuutiksi</p>
+                    <h2></h2>
+                    <p>6. Täytön jälkeen venttiili <strong>20QCA10AA201&nbsp;</strong>suljetaan kokonaan, venttiili
+                        <strong>20GHC74AA201&nbsp;</strong>jätetään hieman raolleen</p>
+                    <h2></h2>
+                    <p>7. Jos tulee tarve tyhjentää säiliö, niin se onnistuu säiliön pohjaventtiilistä
+                        <strong>20QCA10AA801</strong></p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Turvaohjeet -->
+        <div class="routerItem routerTurva">
+            <div id="modalTu" class="modalTu">
+                <span class="closeTu">&times;</span>
+                <embed class="modalTuContent" id="imgTu"
+                    style="-webkit-user-select: none;margin: auto;cursor: -webkit-zoom-in; cursor: zoom-in;"
+                    src="https://drive.google.com/file/d/1VwoVmDzic_pCYQ1vFyrppkOJfgdhrCzj/preview"
+                    width="744" height="540">
+            </div>
+        </div>
+
+
         <div class="backDrop"></div>
     </div>
-
 
 <script type="text/javascript" src="bundle.js"></script></body>
 
